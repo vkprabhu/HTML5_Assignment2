@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<style type="text/css">
+			input {
+				padding: 5px;
+			}
+			body {
+				position: absolute;
+				left: 600px;
+				top: 50px;
+			}
+		</style>
+	</head>
+	<body>
+	<form id="before_login" action="" method="get">
+		<input id="email" type="email" name="email" placeholder="Email" /><br /><br />
+		<input id="password" type="password" name="password" placeholder="Password"><br /><br />
+		<input id="button" type="button" value="Login" onclick="myFunction2()" />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Main.html"><input type="button" value="Back"></a>
+	</form>
+
+	<script type="text/javascript">
+		function myFunction2() {
+			if (typeof(Storage) != "undefined") {
+				var email = document.getElementById('email').value;
+				var password = document.getElementById('password').value;
+				if ((email == localStorage.email) && (password == localStorage.password)) {
+					document.write("Welcome to " + localStorage.name + "<br />"); 
+					document.write("<a href='Main.html'><input type='button' value='Logout' /></a>")
+				}
+				else {
+					document.write("Email/Password dosen't match!" + "<br />");
+					document.write("<a href='login.html'><input type='button' value='Back' /></a>")
+				}
+			}
+			else {
+				document.write("localStorage is not supported!")
+			}
+		}
+	</script>
+	</body>
+</html>

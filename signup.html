@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<style type="text/css">
+			input {
+				padding: 5px;
+			}
+			body {
+				position: absolute;
+				left: 600px;
+				top: 50px;
+			}
+		</style>
+	</head>
+	<body>
+	<form action="" method="get">
+		<input id="name" type="text" name="name" placeholder="Username" /><br /><br />
+		<input id="email" type="email" name="email" placeholder="Email" /><br /><br />
+		<input id="password" type="password" name="password" placeholder="Password"><br /><br />
+		<input type="button" value="Signup" onclick="myFunction1()" />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Main.html"><input type="button" value="Back"></a>
+	</form>
+	<script type="text/javascript">
+		function myFunction1() {
+			if (typeof(Storage) != "undefined") {
+				localStorage.name = document.getElementById('name').value;
+				localStorage.password = document.getElementById('password').value;
+				localStorage.email = document.getElementById('email').value;
+			}
+			else {
+				document.write("localStorage is not supported!")
+			}
+		}
+	</script>
+	</body>
+</html>
